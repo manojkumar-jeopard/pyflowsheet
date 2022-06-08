@@ -42,7 +42,11 @@ class Flowsheet(object):
         for u in units:
             self.unitOperations[u.id] = u
         return
-
+    
+    def RemoveUnits(self, units):
+        for u in units:
+            del self.unitOperations[u.id]
+            
     def unit(self, unitoperation):
         """Add a new unit operation to the flowsheet and return a reference
 
